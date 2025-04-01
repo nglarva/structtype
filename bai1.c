@@ -7,6 +7,15 @@ struct Student
     float score;
 };
 
+struct Employee
+{
+    
+    int id;
+    char Name[100];
+    float salary;
+    
+};
+
 int main(){
     //data_type variable_name;(int number); number = 1
     // struct Student student1;
@@ -28,6 +37,12 @@ int main(){
        
     // }
     struct Student students[5];
+
+    struct Employee employees[2]={{1,"Hung",100.5},{2,"Nhat",255.5}};
+
+
+
+/*
     for(int i = 0;i < 5; i++){
         //STT
         students[i].RollNumber = i + 1;
@@ -37,10 +52,14 @@ int main(){
         lastIndex = strcspn(students[i].Name,"\n");
         students[i].Name[lastIndex] = '\0';
         //Score
+
     }
-    for(int i=0;i<5;i++){
-        printf("%d. %s\n", students[i].RollNumber,students[i].Name);
-    }
+*/
+   printf("%s %5s %10s\n","STT","Name","Salary");
+   for(int i=0; i<2; i++){
+    printf("%d, %7s %10.2f\n", employees[i].id, employees[i].Name, employees[i].salary);
+   }
+
 
     return 0;
 
