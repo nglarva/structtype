@@ -4,6 +4,9 @@ struct Student {
     int rollNumber;
 };
 
+/// @brief 
+/// @param  
+/// @return 
 int main(void){
     
     struct Student student1 = {"Nam",1};
