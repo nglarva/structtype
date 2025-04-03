@@ -32,29 +32,43 @@ printf(" Sieu anh hung %s co suc khoe %d va kha nang %s\n",name4, health4,power4
 
 printf("The strongest is: %s", nameofthehero);
 }
-void printSAH(char name[50], char power[100], int health){
 
-    printf("Name: %s\n Power: %s \n Health: %d", name,power,health);
-
-}
-int main()
-{
-    int healths[5] = {100, 1000, 998, 1, 1001};
-    char names[5][10000] = {"superman", "quang", "batman", "noname", "viruts"};
-    char powers[5][50] = {"bay","chay","lan","di bo","nhay cao"};
+void quanlySAH1(){
+    int health[5] = {100, 1000, 998, 1, 1001};
+    char name[5][10000] = {"superman", "quang", "batman", "noname", "viruts"};
+    char power[5][50] = {"bay","chay","lan","di bo","nhay cao"};
+    int level[5]= {2,4,3,1,5};
+    char specialpower[5][1000]={"laser eyes", "giai tich","bay","invisible","livestream"};
     int max_index = 0;
+    int Ability[5];
 
-    for (int i = 0; i < 5; i++){
-        printSAH(names[i],powers[i],healths[i]);
-    }
 
     for (int i = 0; i < 5; i++)
     {
-        if (healths[i] > healths[max_index])
+        if (health[i] > health[max_index])
         {
             max_index = i;
         }
     }
-    printf("chi so lon nhat la %d thuoc ve sieu anh hung %s\n", healths[max_index], names[max_index]);
+    for (int i = 0; i<5; i++){
+        Ability[i] = health[i] * level[i];
+    }
+
+    for (int i = 0; i < 5; i++)
+    {
+        printSAH(name[i],power[i],health[i],level[i],specialpower[i],Ability[i]);
+    }
+    
+  //  printf("chi so lon nhat la %d thuoc ve sieu anh hung %s\n", health[max_index], name[max_index]);
+
+}
+void printSAH(char name[50], char power[100], int health, int level, char specialpower[100],int Ability){
+
+    printf("Name: %s\n Power: %s \n Health: %d\n Special power:%s\n Level:%d\n Ability:%d\n\n", name,power,health,specialpower,level,Ability);
+
+}
+int main()
+{
+    
     return 0;
 }
